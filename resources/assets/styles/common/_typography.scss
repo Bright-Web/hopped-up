@@ -1,0 +1,44 @@
+body {
+  font-family: 'proximaNovaRegularCon', sans-serif;
+  color: $primary-color;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  font-family: 'lemonMilkBoldItalic', sans-serif;
+  font-size: 7rem;
+}
+
+h2 {
+  font-family: 'lemonMilkBoldItalic', sans-serif;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+}
+
+h3 {
+  font-family: 'proximaNovaSemiBold', sans-serif;
+}
+
+h4 {
+  font-family: 'lemonMilkMediumItalic', sans-serif;
+}
+
+h2::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: -5px;
+  height: 15px;
+  width: 100%;
+  background: $secondary-color;
+  z-index: -1;
+}
+
+.lead-text {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
