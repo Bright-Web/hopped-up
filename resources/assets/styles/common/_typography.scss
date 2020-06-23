@@ -7,6 +7,11 @@ body {
 h1 {
   font-family: 'lemonMilkBoldItalic', sans-serif;
   font-size: 7rem;
+
+  @include sm {
+    font-size: 3.8rem;
+    line-height: 1.1;
+  }
 }
 
 h2 {
@@ -15,6 +20,10 @@ h2 {
   position: relative;
   z-index: 2;
   font-size: 3rem;
+
+  @include sm {
+    font-size: 2.2rem;
+  }
 }
 
 h3 {
@@ -35,10 +44,18 @@ h2::before {
   width: 100%;
   background: $secondary-color;
   z-index: -1;
+
+  @include sm {
+    height: 10px;
+  }
 }
 
 .lead-text {
   margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 2.2rem;
+
+  @include sm {
+    font-size: 1.2rem;
+  }
 }

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="hero page-container">
-      <div class="hero__wrapper">
+    <div class="hero">
+      <div class="hero__wrapper page-container">
         <svg id="hero-arc" data-name="hero-arc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1034.43 1074.05"><defs><clipPath id="clip-path" transform="translate(19 8.3)"><rect x="1" y="1" width="1016" height="1065" style="fill:none"/></clipPath></defs><g style="clip-path:url(#clip-path)"><path d="M.29-8.3-19,1064.45s400.87,16.31,682.5-66.27C1133,849.9,1094.63,232.24,772.34-.49,772.37-.5.29-8.3.29-8.3Z" transform="translate(19 8.3)" style="fill:#feb24f"/></g></svg>
         <img class="hero__beer" src="@asset('images/armbeer.png')">
         <div class="hero__content">
           <h1 class="hero__main-title">Expertly Crafted</h1>
           <h2 class="hero__sub-title">Home Brew Recipes</h2>
-          <button class="button">View Brews</button>
+          <a class="button" href="http://localhost:3000/hopped-up/the-brews/">View Brews</a>
         </div>
         <div class="hero__image">
         </div>
@@ -22,8 +22,8 @@
         </div>
         <div class="welcome__right">
           <div class="welcome__content">
-            <h2>Welcome</h2>
-            <p class="lead-text">I'm baby palo santo art party taiyaki, skateboard freegan semiotics mumblecore kitsch everyday carry shabby chic unicorn. Everyday carry mustache iceland master cleanse, unicorn trust fund austin meh distillery messenger.</p>
+            <h2 class="welcome__title">@php echo get_theme_mod('intro_section_title') @endphp</h2>
+            <p class="welcome__lead lead-text">@php echo get_theme_mod('intro_section_lead') @endphp</p>
           </div>
         </div>
       </div>
@@ -31,8 +31,8 @@
     <div class="new-brews">
       <div class="new-brews__wrapper page-container section-padding">
         <div class="new-brews__heading">
-          <h2>New Brews</h2>
-          <p class="lead-text">I'm baby palo santo art party taiyaki, skateboard freegan semiotics mumblecore kitsch everyday carry shabby chic unicorn. Everyday carrymaster cleanse, unicorn trust fund austin meh distillery messenger.</p>
+          <h2 class="brews__title">@php echo get_theme_mod('brews_section_title') @endphp</h2>
+          <p class="brews__lead lead-text">@php echo get_theme_mod('brews_section_lead') @endphp</p>
         </div>
         <div class="new-brews__grid">
           @php
@@ -76,10 +76,10 @@
 
     </div>
     <div class="new-articles ">
-    <div class="new-articles_wrapper page-container section-padding">
+    <div class="new-articles__wrapper page-container section-padding">
       <div class="new-articles__heading">
-        <h2>Latest Articles</h2>
-        <p class="lead-text">I'm baby palo santo art party taiyaki, skateboard freegan semiotics mumblecore kitsch everyday carry shabby chic unicorn. Everyday carrymaster cleanse, unicorn trust fund austin meh distillery messenger.</p>
+        <h2 class="new-articles__title">@php echo get_theme_mod('articles_section_title') @endphp</h2>
+        <p class="new-articles__lead lead-text">@php echo get_theme_mod('articles_section_lead') @endphp</p>
       </div>
       <div class="new-articles__list">
 

@@ -2,6 +2,7 @@ module.exports = {
   'extends': 'stylelint-config-standard',
   'rules': {
     'no-empty-source': null,
+    'no-duplicate-selectors': null,
     'at-rule-no-unknown': [
       true,
       {

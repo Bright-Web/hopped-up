@@ -1,45 +1,75 @@
-.lead-text {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  line-height: 2.2rem;
+html {
+  display: none;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.main {
+  position: relative;
 }
 
 .page-container {
   max-width: 1280px;
   margin: 0 auto;
+
+  @include sm {
+    margin: 0 5%;
+  }
 }
 
 .section-padding {
   padding: 10rem 0;
+
+  @include sm {
+    padding: 4rem 0;
+  }
 }
 
 .post-padding,
 .page-padding {
   padding: 2.5rem 0;
+
+  @include sm {
+    padding: 0.5rem 0;
+  }
 }
 
 .button {
-  display: block;
+  display: inline-block;
   border-radius: 5px;
   font-family: "lemonMilkBoldItalic", sans-serif;
   color: $secondary-color;
   padding: 0.95em 1.1em;
   font-size: 1.1rem;
   letter-spacing: 1px;
+
+  @include sm {
+    padding: 0.75em 1em;
+    font-size: 1rem;
+  }
 }
 
 #hero-arc {
   position: absolute;
   top: -10px;
-  left: -100px;
-  height: 100vh;
-  z-index: -1;
+  left: -30px;
+  height: 103vh;
+  z-index: 0;
+
+  @include sm {
+    display: none;
+  }
 }
 
 .hero {
   margin-top: -60px;
   margin-bottom: 60px;
   height: calc(100vh - 60px);
+  position: relative;
 
   &__wrapper {
     height: 100%;
@@ -54,8 +84,48 @@
     z-index: -1;
   }
 
+  &__content {
+    z-index: 5;
+  }
+
   .button {
     margin-top: 2rem;
+
+    @include sm {
+      margin-top: 1rem;
+    }
+  }
+
+  h2 {
+    display: block;
+
+    @include sm {
+      display: block;
+      font-size: 1.6rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-image: url(../images/white-clip.svg);
+  }
+
+  @include sm {
+    margin-top: -20px;
+    margin-bottom: 0;
+    height: 25rem;
+    background-color: $secondary-color;
   }
 }
 
@@ -67,11 +137,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5rem;
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+    }
   }
 
   &__left {
     position: relative;
     z-index: 2;
+
+    @include sm {
+      grid-row: 2;
+    }
   }
 
   &__image {
@@ -91,13 +170,25 @@
     right: -22px;
     z-index: -1;
     height: 135%;
+
+    @include sm {
+      top: -45px;
+      right: -12px;
+    }
   }
 }
 
 .new-brews {
   background-color: $primary-color;
+  position: relative;
 
   &__wrapper {
+    padding: 12rem 0;
+
+    @include sm {
+      padding: 6rem 0;
+    }
+
     h2 {
       color: #fff;
     }
@@ -106,6 +197,10 @@
   &__heading {
     text-align: center;
     color: #fff;
+
+    @include sm {
+      text-align: left;
+    }
   }
 
   &__grid {
@@ -113,24 +208,72 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
     margin-top: 4rem;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-image: url(../images/white-clip-inverse.svg);
+
+    @include sm {
+      top: 0;
+    }
+  }
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-image: url(../images/grey-clip.svg);
+
+    @include sm {
+      bottom: -25px;
+      height: 50px;
+    }
   }
 }
 
 .the-brews {
   &__heading {
     text-align: center;
+
+    @include sm {
+      text-align: left;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     margin-top: 4rem;
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      margin-top: 1rem;
+    }
   }
 }
 
 .brew-item {
-  height: 440px;
+  max-height: 410px;
+  min-height: 400px;
   width: 100%;
   border-radius: 5px;
   position: relative;
@@ -138,18 +281,32 @@
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+  box-shadow: 3px 0 30px #0000001a;
+
+  @include sm {
+    max-height: unset;
+    min-height: 325px;
+  }
 
   &__curve {
     position: absolute;
-    bottom: 0;
+    bottom: -30px;
     left: 0;
     right: 0;
     opacity: 0.8;
+
+    @include sm {
+      bottom: -10px;
+    }
   }
 
   &__content {
     padding: 1rem 2rem;
     z-index: 2;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   &__image {
@@ -164,10 +321,26 @@
 .new-articles {
   &__heading {
     text-align: center;
+
+    @include sm {
+      text-align: left;
+    }
   }
 
   &__list {
     margin-top: 4rem;
+
+    @include sm {
+      margin-top: 2rem;
+    }
+  }
+
+  &__wrapper {
+    padding: 7rem 0;
+
+    @include sm {
+      padding: 3rem 0;
+    }
   }
 }
 
@@ -181,8 +354,17 @@
   box-shadow: 3px 0 30px #0000001a;
   margin-bottom: 2rem;
 
+  @include sm {
+    flex-direction: column;
+    max-height: unset;
+  }
+
   &__image-wrap {
     width: 50%;
+
+    @include sm {
+      width: 100%;
+    }
   }
 
   &__content {
@@ -191,11 +373,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include sm {
+      width: 100%;
+      padding: 1rem;
+    }
   }
 }
 
 .new-articles__list .article-item__link:nth-child(2) .article-item {
   flex-direction: row-reverse;
+
+  @include sm {
+    flex-direction: column;
+  }
 }
 
 .brew {
@@ -205,21 +396,24 @@
 
   &__image {
     width: 50%;
-    max-height: 600px;
+    min-height: 550px;
+    max-height: 650px;
     overflow: hidden;
   }
 
   &__content {
     width: 50%;
-    padding: 2rem;
+    padding: 0 3rem;
   }
 
   &__bottom-section {
     display: flex;
+    margin-top: 3rem;
   }
 
   &__ingredients {
     width: 35%;
+    margin-right: 3rem;
   }
 
   &__method {
@@ -229,10 +423,152 @@
   h2::before {
     display: none;
   }
+
+  &__data p {
+    margin-bottom: 0;
+  }
+
+  &__heading h2 {
+    border-bottom: 3px solid #feb34f;
+  }
 }
 
 .article {
   h2::before {
     display: none;
   }
+}
+
+.woocommerce .products,
+.woocommerce ul.products {
+  @include sm {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 3px 0 30px #0000001a;
+
+  @include sm {
+    width: 100% !important;
+  }
+
+  .product-item__content {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  h2::before {
+    display: none;
+  }
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  padding: 0.95em 1.1em;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  padding: 0.95em 1.1em;
+  background-color: $secondary-color;
+  color: #fff;
+}
+
+.product_title {
+  font-size: 3rem;
+}
+
+.woocommerce-Reviews-title {
+  font-size: 1.5rem;
+}
+
+.woocommerce div.product div.images.woocommerce-product-gallery {
+  position: relative;
+  padding: 2rem;
+}
+
+.woocommerce div.product div.summary {
+  margin-bottom: 2em;
+  padding: 2rem;
+}
+
+.woocommerce .quantity .qty {
+  width: 3.631em;
+  text-align: center;
+  height: 46.4px;
+  border-radius: 5px;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper {
+  display: none;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+  background-color: $secondary-color;
+  color: #fff;
+}
+
+.post {
+  .entry-title {
+    display: block;
+    border-bottom: 3px solid #feb34f;
+  }
+
+  .entry-content img {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+.comment-form input[type="submit"],
+.search-form .search-submit {
+  color: $primary-color;
+}
+
+.comment-form input:hover[type="submit"],
+.search-form .search-submit:hover,
+.comment-form input:focus[type="submit"],
+.search-form .search-submit:focus {
+  background-color: #feb24f;
+  color: #fff;
+}
+
+.footer {
+  color: #fff;
+  height: 140px;
+  padding-top: 5rem;
+  position: relative;
+  background-size: cover;
+  background-image: url(../images/dark-clip.svg);
+
+  p {
+    margin: 0;
+  }
+}
+
+html {
+  display: block;
 }

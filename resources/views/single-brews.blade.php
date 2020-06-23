@@ -28,7 +28,6 @@
           <p class="brew__hops">Hops: @php echo get_field('hops') @endphp</p>
           <p class="brew__volume">Volume: @php echo get_field('volume') @endphp</p>
         </div>
-
       </div>
     </div>
     @php $ingredients = get_field('ingredients'); @endphp
@@ -51,4 +50,3 @@
   @endwhile
 </div>
 @endsection
-@php echo get_field('') @endphp

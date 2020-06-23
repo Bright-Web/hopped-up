@@ -1,5 +1,5 @@
-<footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
+<footer class="footer">
+  <div class="page-container">
+    <p>Hopped Up 2020</p>
   </div>
 </footer>

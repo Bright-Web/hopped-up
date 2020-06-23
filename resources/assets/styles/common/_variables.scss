@@ -6,3 +6,17 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+
+//Breakpoints
+$screen-sm-max: 720px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1280px;
+
+//Mixins
+
+//Media Queries
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
