@@ -20,3 +20,9 @@ $screen-lg-min: 1280px;
     @content;
   }
 }
+
+@mixin md {
+  @media (min-width: #{$screen-sm-max}) and (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}

@@ -572,3 +572,20 @@ body {
 html {
   display: block;
 }
+
+.footer {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__icon {
+    height: 50px;
+    width: 50px;
+  }
+}
