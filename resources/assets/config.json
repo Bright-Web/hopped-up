@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/hopped-up/wp-content/themes/hopped-up-theme",
+  "publicPath": "/wp-content/themes/hopped-up-theme",
   "devUrl": "http://localhost/hopped-up",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
